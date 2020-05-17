@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { fetchComic } from '../../services/API/comicReview';
 import { ReviewContainer, PreviewImage, TitleDescContainer, Description, Title } from './styles';
-// import ErrorImage from './imageNotFound.png';
 
 const MAX_CHAR = 200;
 
