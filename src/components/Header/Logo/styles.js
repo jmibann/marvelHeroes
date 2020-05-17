@@ -9,4 +9,8 @@ heigth: 50;
 width: 120px;
 padding-left: 20px;
 padding-right: 20px;
+&:hover {
+    color: white;
+    cursor: pointer;
+  }
 `
