@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { fetchComic } from '../../services/API/comicReview';
 import { ReviewContainer, PreviewImage, TitleDescContainer, Description, Title } from './styles';
-import ErrorImage from './imageNotFound.png';
+// import ErrorImage from './imageNotFound.png';
 
 const MAX_CHAR = 200;
 
@@ -22,18 +22,20 @@ const ComicReview = props => {
     return string.slice(0, max) + '...';
   }
 
+  const addDefaultSrc = (e) => {
+    e.preventDefault();
+    e.target.onerror = null;
+    e.target.src = './imageNotFound.png'
+  }
+
   return (
     <ReviewContainer >
       {
         comic
           ? <>
             <PreviewImage
-              src={comic.thumbnail.path + '/portrait_smallLL.jpg'}
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = './imageNotFound.png'
-                console.log('Error while loading hero: ', props);
-              }}
+              src={comic.thumbnail.path + '/portrait_small.jpg'}
+              onError={addDefaultSrc}
             />
             <TitleDescContainer>
               <Title>{comic.title}</Title>

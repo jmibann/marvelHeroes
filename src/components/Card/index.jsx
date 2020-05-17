@@ -34,10 +34,16 @@ function Card({ hero, onClick }) {
     }
   }
 
+  const addDefaultSrc = (e) => {
+    e.preventDefault();
+    e.target.onerror = null;
+    e.target.src = './imageNotFoundFantastic.png'
+  }
+
   return (
     <CardComponent>
       <ImageFrame onClick={() => onClick(hero)} >
-        <HeroImage src={thumbnail.path + '/portrait_fantastic.jpg'} onerror={() => console.log('Error while loading hero: ', hero)} />
+        <HeroImage src={thumbnail.path + '/portrait_fantastic.jpg'} onError={addDefaultSrc} />
         <Star>
           {isFav
             ? <i className="fas fa-star" onClick={removeAsFav}></i>
