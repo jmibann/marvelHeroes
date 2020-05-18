@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+import { backgroundColor, textColor } from '../../App';
 
 export const CardComponent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background-color: rgb(247, 248, 250);
+    background-color: ${ () => backgroundColor};
     `;
+// background-color: rgb(247, 248, 250);
 
 export const ImageFrame = styled.div`
     position: relative;
