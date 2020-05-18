@@ -10,9 +10,9 @@ const ComicReview = props => {
   const [comic, setComic] = useState(null);
 
   useEffect(() => {
-    let mounted = true;
+    let isMounted = true;
     const loadComic = async () => await fetchComic(props.comic.resourceURI).then(comic => {
-      if (mounted) {
+      if (isMounted) {
         setComic(comic);
       } else {
         setComic(null);
@@ -21,7 +21,7 @@ const ComicReview = props => {
     );
 
     loadComic();
-    return () => mounted = false;
+    return () => isMounted = false;
   }, [props.comic.resourceURI]);
 
 

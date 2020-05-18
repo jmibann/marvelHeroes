@@ -4,14 +4,25 @@ import CardsBoard from '../CardsBoard';
 
 import { fetchSearchResult } from '../../services/API/searchResult';
 
-const SearchResult = ({ history, inputSearch }) => {
+const SearchResult = ({ inputSearch }) => {
 
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    const loadSearchResult = async (input) => await fetchSearchResult(input).then(result => setSearchResult(result))
+    let isMounted = true;
+    const loadSearchResult = async (input) => await fetchSearchResult(input).then(result => {
+      if (isMounted) {
+        setSearchResult(result);
+      } else {
+        return;
+      }
+    })
 
     loadSearchResult(inputSearch);
+
+    return () => {
+      isMounted = false;
+    }
   }, [inputSearch])
 
   return (
