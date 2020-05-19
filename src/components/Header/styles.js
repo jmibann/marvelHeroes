@@ -11,6 +11,3 @@ border-color: #A8A8A8;
 border-width: 2px;
 background-color: ${ () => backgroundColor};
 `
-
-
-// background-color: white

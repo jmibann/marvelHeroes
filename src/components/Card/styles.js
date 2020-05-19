@@ -9,7 +9,6 @@ export const CardComponent = styled.div`
     padding: 16px;
     background-color: ${ () => backgroundColor};
     `;
-// background-color: rgb(247, 248, 250);
 
 export const ImageFrame = styled.div`
     position: relative;

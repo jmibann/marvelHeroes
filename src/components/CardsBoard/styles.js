@@ -9,7 +9,6 @@ export const CardsContainer = styled.div`
     justify-content: space-evenly;
     background-color: ${ () => backgroundColor};
 `;
-// background-color: rgb(247, 248, 250);
 
 export const NoComicFound = styled.div`
     display: flex;

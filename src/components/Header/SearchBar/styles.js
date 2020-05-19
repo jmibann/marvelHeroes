@@ -1,13 +1,15 @@
 
 import styled from 'styled-components';
 
+import { backgroundColor, textColor } from '../../../App';
+
 export const SearchBar = styled.div`
 align-items: center;
 display: flex;
 justify-content: space-between;
 width: 100%;
 height: 50px;
-background-color: white
+background-color: ${ () => backgroundColor};
 `;
 
 export const Separator = styled.div`

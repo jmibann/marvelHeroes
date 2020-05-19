@@ -46,11 +46,14 @@ function App() {
     (currentTheme === 'light') ? setCurrentTheme('dark') : setCurrentTheme('light')
   }
 
+  const switchTo = () => {
+    return currentTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+  }
+
   return (
     <div className="App">
-      <button onClick={toogleTheme}>{currentTheme} Theme</button>
+      <button onClick={toogleTheme}>{switchTo()}</button>
       <ThemeProvider theme={{ mode: currentTheme }}>
-        {/* <Wrapper> */}
         <InputContext.Provider value={{ input: inputSearch, setInput: setInputSearch, setInputComic: setInputSearchComic }}>
           <Header />
         </InputContext.Provider>
@@ -60,7 +63,6 @@ function App() {
         {inputSearch.length && !inputSearchComic.length ? <SearchResult inputSearch={inputSearch} /> : null}
 
         {(inputSearch && inputSearchComic) ? <ComicInfo comicId={inputSearchComic} /> : null}
-        {/* </Wrapper> */}
       </ThemeProvider>
     </div>
   );
