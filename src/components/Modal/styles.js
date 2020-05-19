@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { backgroundColor, textColor, themeButton } from '../../Common/theme';
+
 export const StyledModal = styled.div`
   position: absolute;
   top: 0;
@@ -46,7 +48,7 @@ export const StyledModal = styled.div`
     width: 100%;
     height: 475px;
     border-radius: 10px;
-    background-color: #fefefe;
+    background-color: ${ () => backgroundColor};
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     .box-content {
       padding:  0 24px 0 24px; 
@@ -55,6 +57,7 @@ export const StyledModal = styled.div`
       overflow-y: scroll;
       overflow: -moz-scrollbars-vertical; 
       margin-right: 5px;
+      color: ${ () => textColor};
     }
     .box-header {
       height: 48px;
@@ -62,6 +65,7 @@ export const StyledModal = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: ${ () => textColor};
       .box-title {
         font-size: 24px;
         font-weight: 400;
@@ -72,7 +76,7 @@ export const StyledModal = styled.div`
         line-height: 35px;
         font-weight: 400;
         text-shadow: none;
-        color: black;
+        color: ${ () => textColor};
         border-width: 0px;
         cursor: pointer;
         &:hover {
@@ -100,5 +104,7 @@ export const StyledModal = styled.div`
 export const Button = styled.button`
   font: 400 24px system-ui;
   border-width: 0px;
-  background-color: white;
+  background-color: ${ () => themeButton};
+  color: ${ () => textColor};
 `;
+

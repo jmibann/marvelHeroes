@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CardsBoard from '../CardsBoard';
 
 import { fetchSearchResult } from '../../services/API/searchResult';
+import { TitleContainer } from './styles';
 
 const SearchResult = ({ inputSearch }) => {
 
@@ -27,7 +28,7 @@ const SearchResult = ({ inputSearch }) => {
 
   return (
     <div>
-      <h1>Results: {inputSearch} </h1>
+      <TitleContainer> Results: {inputSearch} </TitleContainer>
 
       <CardsBoard heroes={searchResult} />
     </div>

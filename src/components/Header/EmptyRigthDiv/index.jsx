@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { EmptyDiv, Button } from './styles';
 
 
-const EmptyRightDiv = (props) => {
-  const [currentTheme, setCurrentTheme] = useState('light')
+const EmptyRightDiv = ({ currentTheme, setCurrentTheme }) => {
 
   const toogleTheme = () => {
     (currentTheme === 'light') ? setCurrentTheme('dark') : setCurrentTheme('light')

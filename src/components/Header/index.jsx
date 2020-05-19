@@ -5,13 +5,13 @@ import Logo from './Logo';
 import SearchBarContainer from './SearchBar';
 import EmptyRigthDiv from './EmptyRigthDiv'
 
-const Header = ({ history }) => {
+const Header = ({ currentTheme, setCurrentTheme }) => {
 
   return (
     <HeaderContainer>
       <Logo />
       <SearchBarContainer />
-      <EmptyRigthDiv />
+      <EmptyRigthDiv currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
     </HeaderContainer>
   )
 }
