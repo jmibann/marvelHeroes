@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-import { backgroundColor, textColor } from '../../../Common/theme';
+import { backgroundColor } from '../../../Common/theme';
 
 export const SearchBar = styled.div`
 align-items: center;

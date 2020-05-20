@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { backgroundColor, textColor } from '../../Common/theme';
+import { backgroundColor } from '../../Common/theme';
 
 export const CardComponent = styled.div`
     display: flex;

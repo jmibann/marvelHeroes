@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { backgroundColor, textColor } from '../../../Common/theme';
+import { textColor } from '../../../Common/theme';
 
 export const EmptyDiv = styled.div`
   width: 120px;
